@@ -1,9 +1,14 @@
+
+import "./GlobalResources/Assets/Fonts/fonts.css";
+import globalStyles from "./GlobalResources/Theme/globalStyles";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { GlobalStyles } from "tss-react";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
+
 
 export const muiCache = createCache({
   key: "mui",
@@ -13,6 +18,7 @@ export const muiCache = createCache({
 ReactDOM.render(
   <React.StrictMode>
     <CacheProvider value={muiCache}>
+      <GlobalStyles styles={globalStyles} />
       <App />
     </CacheProvider>
   </React.StrictMode>,
